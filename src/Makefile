@@ -236,7 +236,7 @@ $(LIBCYPHER-PARSER):
 ifeq (,$(wildcard $(LIBCYPHER-PARSER)))
 	cd $(ROOT)/deps/libcypher-parser; \
 	sh ./autogen.sh; \
-	./configure --disable-shared;
+	./configure --disable-shared --disable-doxygen-doc;
 	$(MAKE) CFLAGS="-O3 -fPIC -DYY_BUFFER_SIZE=1048576" clean check -C $(ROOT)/deps/libcypher-parser
 endif
 .PHONY: $(LIBCYPHER-PARSER)
